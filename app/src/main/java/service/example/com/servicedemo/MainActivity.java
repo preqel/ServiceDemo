@@ -50,26 +50,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                      startService(intent);
                 break;
             case R.id.button2:
-                Intent intent2 = new Intent(v.getContext(), MyService.class);
-                bindService(intent2, new ServiceConnection() {
-                    @Override
-                    public void onServiceConnected(ComponentName name, IBinder service) {
-
-                    }
-
-                    @Override
-                    public void onServiceDisconnected(ComponentName name) {
-
-                    }
-                }, Context.BIND_AUTO_CREATE);
+                    Intent intent2 = new Intent(v.getContext(), MyService.class);
+                    bindService(intent2, conn, Context.BIND_AUTO_CREATE);
                 break;
             case R.id.button3:
-//                Intent intent3 =new Intent3(v.getContext(),MyService.class );
-//                unbindService();
+                unbindService(conn);
                 break;
             case R.id.button4:
-
-
+                Intent intent3  = new Intent(v.getContext(),MyService.class  );
+                stopService(intent3);
                 break;
 
         }

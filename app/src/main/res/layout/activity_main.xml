@@ -39,4 +39,4 @@
         android:text="stopservice"
         tools:layout_editor_absoluteY="320dp"
         tools:layout_editor_absoluteX="16dp" />
-</>
+</LinearLayout>
