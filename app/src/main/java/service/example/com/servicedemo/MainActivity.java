@@ -45,21 +45,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.button:
+            case R.id.button:   //启动服务
                      Intent intent  = new Intent(v.getContext(),MyService.class);
                      startService(intent);
                 break;
-            case R.id.button2:
+            case R.id.button2:   //绑定服务2232131
                     Intent intent2 = new Intent(v.getContext(), MyService.class);
                     bindService(intent2, conn, Context.BIND_AUTO_CREATE);
                 break;
-            case R.id.button3:
+            case R.id.button3:    //取消绑定服务
                 unbindService(conn);
                 break;
-            case R.id.button4:
+            case R.id.button4:     //取消启动服务
                 Intent intent3  = new Intent(v.getContext(),MyService.class  );
                 stopService(intent3);
                 break;
+            //支持可扩展
 
         }
     }
