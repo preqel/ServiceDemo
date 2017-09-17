@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                      Intent intent  = new Intent(v.getContext(),MyService.class);
                      startService(intent);
                 break;
-            case R.id.button2:   //绑定服务2232131
+            case R.id.button2:   //绑定服务
                     Intent intent2 = new Intent(v.getContext(), MyService.class);
                     bindService(intent2, conn, Context.BIND_AUTO_CREATE);
                 break;
