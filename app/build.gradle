@@ -1,6 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('/servicedemo.jks')
+            storePassword '123456'
+        }
+    }
+
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
@@ -17,6 +26,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        uc {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "uc"]
+        }
+        _360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "360"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        yyb {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yyb"]
+        }
+    }
+
 }
 
 dependencies {
@@ -26,5 +50,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
     testCompile 'junit:junit:4.12'
 }

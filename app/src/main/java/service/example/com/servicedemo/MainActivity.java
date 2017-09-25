@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent3  = new Intent(v.getContext(),MyService.class  );
                 stopService(intent3);
                 break;
-            //支持可扩展
+            default:
+                break;
 
         }
     }
